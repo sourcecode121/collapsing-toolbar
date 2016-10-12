@@ -24,6 +24,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
+                android:id="@+id/collapsing_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -57,6 +58,7 @@
             tools:context="com.example.collapsingtoolbar.MainActivity">
 
             <TextView
+                android:id="@+id/main_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/yoda_quote" />

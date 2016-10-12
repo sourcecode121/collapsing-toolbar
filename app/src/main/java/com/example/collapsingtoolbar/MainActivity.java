@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -48,5 +51,22 @@ public class MainActivity extends AppCompatActivity {
         collapsingToolbarLayout.setTitle("Yoda");
         collapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
         collapsingToolbarLayout.setExpandedTitleTextColor(ColorStateList.valueOf(Color.WHITE));
+
+        setCustomView(toolbar);
+    }
+
+    private void setCustomView(Toolbar toolbar) {
+        View customView = getLayoutInflater().inflate(R.layout.custom_view, null);
+        toolbar.addView(customView);
+
+        customView.findViewById(R.id.custom_view_image).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ImageView imageView = (ImageView) findViewById(R.id.collapsing_image);
+                imageView.setImageResource(R.drawable.vader);
+                TextView textView = (TextView) findViewById(R.id.main_text);
+                textView.setText(R.string.vader_quote);
+            }
+        });
     }
 }
