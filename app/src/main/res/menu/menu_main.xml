@@ -16,4 +16,8 @@
         android:title="Item 3"
         android:icon="@drawable/ic_item_3"
         app:showAsAction="always"/>
+
+    <item android:id="@+id/about"
+        android:title="About"
+        app:showAsAction="never"/>
 </menu>
